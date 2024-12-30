@@ -44,7 +44,9 @@ class HomePage extends StatelessWidget {
                 aspectRatios: [1, 1, 2],
               ),
               SizedBox(height: 16),
-              SmallDisplayCard(),
+              SmallDisplayCard(
+                isScrollable: true,
+              ),
             ],
           ),
         ),
