@@ -38,7 +38,9 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 16),
               StreakCard(),
               SizedBox(height: 16),
-              DynamicHeightHorizontalList(),
+              DynamicHeightHorizontalList(
+                aspectRatios: [1, 1, 2],
+              ),
               SizedBox(height: 16),
               SmallDisplayCard(),
             ],

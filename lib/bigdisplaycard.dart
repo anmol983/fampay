@@ -25,11 +25,10 @@ class _BigDisplayCardState extends State<BigDisplayCard> {
         duration: Duration(milliseconds: 300),
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isLongPressed ? Colors.blue.shade700 : Colors.blue,
-          borderRadius: BorderRadius.circular(12),
+          color: Colors.transparent,
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if (isLongPressed)
               Column(
@@ -72,39 +71,35 @@ class _BigDisplayCardState extends State<BigDisplayCard> {
               ),
             if (isLongPressed) SizedBox(width: 16),
             Expanded(
-              child: Container(
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 300),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: isLongPressed ? Colors.blue.shade700 : Colors.blue,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Row(
+                      Column(
                         children: [
                           Icon(Icons.lock, size: 40, color: Colors.white),
-                          SizedBox(width: 16),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Big display card with action',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 8),
-                                Text(
-                                  'This is a sample text for the subtitle that you can add to contextual cards.',
-                                  style: TextStyle(color: Colors.white70),
-                                ),
-                              ],
+                          SizedBox(height: 16),
+                          Text(
+                            'Big display card with action',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            'This is a sample text for the subtitle that you can add to contextual cards.',
+                            style: TextStyle(color: Colors.white70),
+                            textAlign: TextAlign.center,
                           ),
                         ],
                       ),
